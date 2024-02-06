@@ -9,8 +9,7 @@ namespace _1brc
 {
     public static class Utils
     {
-        public static readonly string InputFileName = "./measurements.txt";
-        public static readonly string InputFileNameMin = "./measurements_min.txt";
+        public static readonly string InputFileName = "./measurements.txt";       
         public static readonly string OutputFileName = "./measurements-out.txt";
 
 
