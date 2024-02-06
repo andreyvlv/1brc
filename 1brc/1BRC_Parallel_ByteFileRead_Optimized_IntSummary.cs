@@ -176,7 +176,7 @@ namespace _1brc
                 {
                     value = (valueSpan[0] - '0') * 100 + (valueSpan[1] - '0') * 10 + (valueSpan[3] - '0');
                 }
-                else // for length of positive span is 3, for example [1] [2] [.] [3]
+                else // for length of positive span is 3, for example [1] [.] [2]
                 {
                     value = (valueSpan[0] - '0') * 10 + (valueSpan[2] - '0');
                 }
