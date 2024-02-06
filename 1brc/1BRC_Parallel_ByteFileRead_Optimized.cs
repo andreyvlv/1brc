@@ -23,14 +23,14 @@ namespace _1brc
 
             // use a dictionary for each thread
 
-            Dictionary<string, Summary>[] localMaps = new Dictionary<string, Summary>[concurrent];
+            Dictionary<string, Summary>[] dictionaries = new Dictionary<string, Summary>[concurrent];
 
             Parallel.For(0, concurrent, i =>
             {
                 using (FileStream stream = File.OpenRead(Utils.InputFileName))
                 {
-                    localMaps[i] = new();
-                    Dictionary<string, Summary> dictionary = localMaps[i];
+                    dictionaries[i] = new();
+                    Dictionary<string, Summary> dictionary = dictionaries[i];
 
                     Span<byte> chars = new byte[chunk];
                     Span<byte> cache = new byte[chunk];
@@ -115,7 +115,7 @@ namespace _1brc
 
             var mergedDictionary = new Dictionary<string, Summary>();
 
-            foreach (var dict in localMaps)
+            foreach (var dict in dictionaries)
             {
                 foreach (var kv in dict)
                 {
